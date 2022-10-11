@@ -1,7 +1,4 @@
 FROM python:3.10-alpine as build
-RUN set -eux; \
-      apk --no-cache upgrade && \
-      apk add --no-cache build-base zlib-dev jpeg-dev
 WORKDIR /tmp
 RUN set -eux; \
       wget https://github.com/frozenpandaman/s3s/archive/refs/heads/master.zip -O s3s.zip && \

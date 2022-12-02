@@ -1,4 +1,4 @@
-name: 'Make the latest container image fresh'
+name: Image refresh
 
 on:
   schedule:

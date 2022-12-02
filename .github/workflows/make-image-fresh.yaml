@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: isseim/s3s:experimental
+      options: --user root # because isseim/s3s uses the user `s3s` by default, who isn't allowed to write outputs.
     outputs:
       revision: ${{ steps.get-revision.outputs.revision }}
     steps:

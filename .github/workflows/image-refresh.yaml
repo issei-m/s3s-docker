@@ -27,7 +27,7 @@ jobs:
         id: get-revision
         run: echo "revision=$(curl -s https://api.github.com/repos/frozenpandaman/s3s/commits/master | jq -r '.sha')" >> "$GITHUB_OUTPUT"
 
-  rebuild-latest-and-push:
+  refresh-latest-image:
     runs-on: ubuntu-latest
     needs: [latest-image, latest-app]
     if: needs.latest-image.outputs.revision != needs.latest-app.outputs.revision

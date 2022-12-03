@@ -60,7 +60,7 @@ jobs:
           AWS_PAGER: ''
         run: |
           aws sns publish --topic-arn ${{ secrets.AWS_NOTIFICATION_TOPIC_ARN }} \
-            --subject '[ ! ] [s3s-docker] Refreshed image' \
+            --subject '[s3s-docker] Refreshed image' \
             --message 'See: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
 
   failure-notification:

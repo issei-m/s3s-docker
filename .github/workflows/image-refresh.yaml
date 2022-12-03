@@ -9,7 +9,7 @@ jobs:
   latest-image:
     runs-on: ubuntu-latest
     container:
-      image: isseim/s3s:experimental
+      image: isseim/s3s:latest
       options: --user root # because isseim/s3s uses the user `s3s` by default, who isn't allowed to write outputs.
     outputs:
       revision: ${{ steps.get-revision.outputs.revision }}
@@ -48,4 +48,4 @@ jobs:
             REVISION=${{ needs.latest-app.outputs.revision }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: isseim/s3s:experimental
+          tags: isseim/s3s:latest

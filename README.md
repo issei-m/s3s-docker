@@ -4,7 +4,7 @@ The unofficial containerized version of [s3s](https://github.com/frozenpandaman/
 Before use it, you need to understand what s3s is and how it works at [the official repository](https://github.com/frozenpandaman/s3s).
 
 **The official tool s3s is currently under development and rapidly updated without any specific stable version tag,
-we catch up the main stream and reflect changes into `latest` tag, so frequent pull it is strongly recommended.**
+we catch up the main stream and reflect changes into `latest` tag, so frequent pull it (or use `--pull always` of `docker run`) is strongly recommended.**
 
 Example usage:
 

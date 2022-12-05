@@ -1,10 +1,16 @@
 FROM python:3.10-alpine as build
+RUN set -eux; \
+    apk --no-cache upgrade && \
+    apk add --no-cache patch
 WORKDIR /tmp
+COPY bypassing_update_check.patch /tmp
 ARG REVISION=master
 RUN set -eux; \
     wget "https://github.com/frozenpandaman/s3s/archive/${REVISION}.zip" -O s3s.zip && \
     unzip s3s.zip && rm s3s.zip && mv s3s* /opt/s3s
 WORKDIR /opt/s3s
+RUN set -eux; \
+    patch -u s3s.py -i /tmp/bypassing_update_check.patch
 RUN set -eux; \
     echo "$REVISION" > REVISION
 RUN set -eux; \

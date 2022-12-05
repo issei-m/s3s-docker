@@ -1,0 +1,11 @@
+--- a.py	2022-12-05 18:31:34.000000000 +0900
++++ b.py	2022-12-05 18:32:23.000000000 +0900
+@@ -1667,7 +1667,7 @@
+ 
+ 	# setup
+ 	#######
+-	check_for_updates()
++	# check_for_updates() # Bypassed this because this isn't necessary when the program runs on the container.
+ 	check_statink_key()
+ 	set_language()
+ 

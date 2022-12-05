@@ -1,4 +1,4 @@
-FROM python:3.10-alpine as build
+FROM python:3.11-alpine as build
 RUN set -eux; \
     apk --no-cache upgrade && \
     apk add --no-cache patch
@@ -19,7 +19,7 @@ RUN set -eux; \
 RUN set -eux; \
     rm -fr .github .gitignore requirements.txt
 
-FROM python:3.10-alpine
+FROM python:3.11-alpine
 LABEL maintainer="issei-m (https://twitter.com/Issei_M)"
 RUN addgroup -S -g 1000 s3s && adduser -S -G s3s -u 999 s3s
 COPY --from=build /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages

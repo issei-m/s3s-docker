@@ -5,7 +5,7 @@
  	# setup
  	#######
 -	check_for_updates()
-+	# check_for_updates() # Bypassed this because this isn't necessary when the program runs on the container.
++	# check_for_updates() # Bypassing this update check which isn't necessary in running on a container.
  	check_statink_key()
  	set_language()
  

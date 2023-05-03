@@ -50,7 +50,7 @@ docker cp s3s-for-config:/opt/s3s/config.txt .
 The whole content of the `config.txt` can directly be specified to s3s to load it via the `S3S_CONFIG` environment variable like:  
 
 ```
-s3s_config=$(cat config.txt); docker run -t --rm -e S3S_CONFIG=$s3s_config isseim/s3s -M -r
+s3s_config=$(cat config.txt); docker run -t --rm -e S3S_CONFIG="$s3s_config" isseim/s3s -M -r
 ```
 
 It'd be a little useful if you've stored the content of `config.txt` to make sure the tokens are confidential using a secure storage such as AWS Parameter Store (SecureString).

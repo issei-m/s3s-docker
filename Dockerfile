@@ -44,7 +44,7 @@ COPY docker-entrypoint.sh /entrypoint.sh
 COPY --from=build /opt/s3s /opt/s3s
 RUN <<EOF
 set -eux
-chown -R s3s.s3s /opt/s3s
+chown -R s3s:s3s /opt/s3s
 EOF
 WORKDIR /opt/s3s
 USER s3s

@@ -1,4 +1,4 @@
-FROM python:3.12-alpine as build
+FROM python:3.12-alpine AS build
 RUN <<EOF
 set -eux
 apk --no-cache upgrade
